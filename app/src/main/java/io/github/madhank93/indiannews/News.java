@@ -6,12 +6,22 @@ public class News {
     private String newsTitle;
     private String newsSource;
     private String newsDate;
+    private String newsURL;
 
-    public News (String newsImageURL, String newsTitle, String newsSource, String newsDate) {
+    public News (String newsImageURL, String newsTitle, String newsSource, String newsDate, String newsURL) {
         this.newsImageURL = newsImageURL;
         this.newsTitle = newsTitle;
         this.newsSource = newsSource;
         this.newsDate = newsDate;
+        this.newsURL = newsURL;
+    }
+
+    public String getNewsURL() {
+        return newsURL;
+    }
+
+    public void setNewsURL(String newsURL) {
+        this.newsURL = newsURL;
     }
 
     public String getNewsImageURL() {

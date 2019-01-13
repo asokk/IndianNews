@@ -1,6 +1,8 @@
 package io.github.madhank93.indiannews;
 
 import android.content.Context;
+import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +12,18 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class NewsAdapter extends ArrayAdapter<News> {
+
+    /** Tag for the log messages */
+    private static final String LOG_TAG = NewsAdapter.class.getSimpleName();
+
 
     /**
      * Constructs a new {@link NewsAdapter}.
@@ -54,11 +65,36 @@ public class NewsAdapter extends ArrayAdapter<News> {
         TextView newsSource = listItemView.findViewById(R.id.news_source);
         newsSource.setText(currentNews.getNewsSource());
 
+
+        String formattedDate = formatDateAndTime(currentNews.getNewsDate());
+
         // Find the (news date) TextView with view ID new_title and set the value
         TextView newsDate = listItemView.findViewById(R.id.news_date);
-        newsDate.setText(currentNews.getNewsDate());
+        newsDate.setText(formattedDate);
 
         return listItemView;
+    }
+
+    /**
+     * Return the formatted date string (i.e. "27-09-2018 10:15") from a date string.
+     */
+    private String formatDateAndTime(String timestamp) {
+
+        SimpleDateFormat actualDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        SimpleDateFormat expectedDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+
+        Date dateValue = null;
+        try
+        {
+            dateValue = actualDateFormat.parse(timestamp);
+        }
+        catch (ParseException e)
+        {
+            Log.e(LOG_TAG, "Problem in formatting the date pattern", e);
+        }
+        String formatted = expectedDateFormat.format(dateValue);
+
+        return formatted;
     }
 
 }

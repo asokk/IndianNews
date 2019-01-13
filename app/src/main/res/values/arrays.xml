@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="listArray">
+        <item>India</item>
+        <item>USA</item>
+    </string-array>
+
+    <string-array name="listValues">
+        <item>in</item>
+        <item>us</item>
+    </string-array>
+</resources>

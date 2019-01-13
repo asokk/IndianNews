@@ -1,7 +1,6 @@
 package io.github.madhank93.indiannews;
 
 import android.content.Context;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +13,8 @@ import com.squareup.picasso.Picasso;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class NewsAdapter extends ArrayAdapter<News> {
 

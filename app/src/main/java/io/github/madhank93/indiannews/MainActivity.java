@@ -21,7 +21,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class    MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
+public class  MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
 
     private TextView mEmptyStateTextView; // TextView that is displayed when the list is empty
     
@@ -116,7 +116,7 @@ public class    MainActivity extends AppCompatActivity implements LoaderManager.
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         uriBuilder.appendQueryParameter("country", country);
-        uriBuilder.appendQueryParameter("apiKey", "c364984912224ef7b05682ac4f6dfeb4");
+        uriBuilder.appendQueryParameter("apiKey", "REPLACE_YOUR_API_KEY");
 
         return new NewsLoader(this,uriBuilder.toString());
     }

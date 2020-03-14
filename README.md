@@ -13,5 +13,5 @@ Don't forget to include your News API in https://github.com/madhank93/IndianNews
 
 
 <a href='https://play.google.com/store/apps/details?id=io.github.madhank93.indiannews'>
-<img src='https://cdn.iconscout.com/public/images/icon/free/png-128/google-play-badge-brand-logo-336887e54057ddcb-128x128.png' border='0' alt="google play badge" />
+<img src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' border='0' alt="google play badge" />
 </a>
